@@ -1,0 +1,19 @@
+
+.footer {
+    background-color: #d5c8c8;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjust the gap between logos as needed */
+  }
+  
+  .logo-container img {
+    max-width: 100px; /* Adjust the maximum width of the logos as needed */
+  }
+  
