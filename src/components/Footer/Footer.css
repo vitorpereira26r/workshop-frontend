@@ -4,6 +4,9 @@
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
   
   .logo-container {
@@ -14,6 +17,6 @@
   }
   
   .logo-container img {
-    max-width: 100px; /* Adjust the maximum width of the logos as needed */
+    max-width: 80px; /* Adjust the maximum width of the logos as needed */
   }
   
