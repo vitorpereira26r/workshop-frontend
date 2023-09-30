@@ -10,3 +10,9 @@
     margin-bottom: 100px;
   }
   
+  /* Add responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .content {
+    margin-bottom: 50px; /* Reduce the margin for smaller screens */
+  }
+}

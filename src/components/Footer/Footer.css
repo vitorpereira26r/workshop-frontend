@@ -17,6 +17,19 @@
   }
   
   .logo-container img {
-    max-width: 80px; /* Adjust the maximum width of the logos as needed */
+    max-width: 70px; /* Adjust the maximum width of the logos as needed */
   }
+
+  /* Add responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .logo-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .logo-container img {
+    max-width: 50px; /* Adjust the maximum width of the logos for smaller screens */
+    margin: 10px 0; /* Add some margin to separate logos vertically */
+  }
+}
   
