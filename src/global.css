@@ -2,4 +2,52 @@
 
 body {
     font-family: "Montserrat", sans-serif;
+    color: #000000;
 }
+
+/* CSS for button styles */
+.styled-button {
+    color: #181818;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 15px 20px;
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 18px;
+  }
+  
+  .yellow-button {
+    background-color: #ffc107;
+  }
+  
+  .blue-button {
+    background-color: #007bff;
+  }
+  
+  .red-button {
+    background-color: #dc3545;
+  }
+  
+  .green-button {
+    background-color: #28a745;
+  }
+
+  .yellow-font{
+    color: #ffc107;
+  }
+
+  .blue-font{
+    color: #007bff;
+  }
+
+  .red-font{
+    color: #dc3545;
+  }
+
+  .green-font{
+    color: #28a745;
+  }
+  

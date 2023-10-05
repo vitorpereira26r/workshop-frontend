@@ -8,7 +8,7 @@ export const Navbar: React.FC = () => {
         <nav className="navbar">
             <ul className='nav-link'>
                 <li><button className='btn-li'><a href="/">Home</a></button></li>
-                <li><button className='btn-li'><a href="#">Button 2</a></button></li>
+                <li><button className='btn-li'><a href="/users">Users</a></button></li>
                 <li><button className='btn-li'><a href="#">Button 3</a></button></li>
                 <li><button className='btn-li'><a href="#">Button 4</a></button></li>
             </ul>
