@@ -42,8 +42,8 @@ export const UserList:React.FC = () => {
   }
 
   const onClose = () => {
-    fetchUsers();
     setShowAddModal(false);
+    fetchUsers();
   }
 
   return (
