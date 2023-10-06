@@ -80,15 +80,27 @@ export const UserList:React.FC = () => {
     setUserToEdit(user);
   }
 
+  const addUserToList = (newUser: User) => {
+    setUsers((prevUsers) => [... prevUsers, newUser]);
+  }
+
+  const editUserToList = (newUser: User) => {
+    const userIndex = users.findIndex((user) => user.id === newUser.id);
+
+    if(userIndex !== -1){
+      const updatedUsers = [...users];
+      updatedUsers[userIndex] = newUser
+      setUsers(updatedUsers);
+    }
+  }
+
   const closeEditModal = () => {
     setShowEditModal(false);
-    fetchUsers();
     setUserToEdit(initialUserState);
   }
 
   const onClose = () => {
     setShowAddModal(false);
-    fetchUsers();
   }
 
   return (
@@ -97,6 +109,7 @@ export const UserList:React.FC = () => {
         title={"Create User"}
         isOpen={showAddModal}
         onClose={onClose}
+        addUserToList={addUserToList}
       />
       <DeleteConfirmationModal
         isOpen={showDeleteModal}
@@ -107,6 +120,7 @@ export const UserList:React.FC = () => {
         title={"Edit User"}
         isOpen={showEditModal}
         onClose={closeEditModal}
+        editUserToList={editUserToList}
         user={userToEdit}
       />
       <div className='users'>

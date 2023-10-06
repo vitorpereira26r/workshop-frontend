@@ -8,9 +8,10 @@ interface ModalProps{
     title: string;
     isOpen: boolean;
     onClose: () => void;
+    addUserToList: (newUser: User) => void;
 }
 
-export const CreateUserModal:React.FC<ModalProps> = ({title, isOpen, onClose}) => {
+export const CreateUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, addUserToList}) => {
 
   const initialUserState: User = {
     id: 0,
@@ -36,8 +37,9 @@ export const CreateUserModal:React.FC<ModalProps> = ({title, isOpen, onClose}) =
     });
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     createUser(user);
+    addUserToList(user);
     onClose();
   }
 

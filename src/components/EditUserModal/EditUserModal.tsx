@@ -8,10 +8,11 @@ interface ModalProps{
     title: string;
     isOpen: boolean;
     onClose: () => void;
+    editUserToList: (newUser: User) => void;
     user: User;
 }
 
-export const EditUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, user}) => {
+export const EditUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, editUserToList, user}) => {
 
   const [userToUpdate, setUserToUpdate] = useState<User>({...user});
 
@@ -29,6 +30,7 @@ export const EditUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, user
 
   const handleSubmit = () => {
     updateUserById(userToUpdate, userToUpdate.id);
+    editUserToList(userToUpdate);
     onClose();
   }
 
