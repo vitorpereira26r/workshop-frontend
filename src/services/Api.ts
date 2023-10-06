@@ -2,7 +2,7 @@ import axios from "axios"
 import { User } from "../entities/User";
 
 export const apiUrl = "https://workshop-springboot3-app-befefc2b19cc.herokuapp.com";
-const devApiUrl = "http://localhost:8080"
+//const devApiUrl = "http://localhost:8080"
 
 export const fetchUsers = async (): Promise<User[]> => {
     try{
@@ -18,6 +18,28 @@ export const fetchUsers = async (): Promise<User[]> => {
 export const createUserApi = async (user: User): Promise<User> => {
     try{
         const response = await axios.post(`${apiUrl}/users`, user);
+        const entity: User = response.data;
+        return entity;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+export const deleteUser = async (id: number) =>{
+    try{
+        const response = await axios.delete(apiUrl + "/users/" + id);
+        console.log(response);
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+export const editUser = async (user: User, id: number): Promise<User> => {
+    try{
+        const response = await axios.put(apiUrl + "/users/" + id, user);
+        console.log(response);
         const entity: User = response.data;
         return entity;
     }
