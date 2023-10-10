@@ -1,5 +1,5 @@
-import { Order, OrderProps, ChangeOrderStatus } from "../../entities/Order";
-import { changeStatusOrderApi, createOrderApi, deleteOrderApi, getOrders, payOrderApi } from "../Api";
+import { Order, OrderProps, ChangeOrderStatus, AddItem } from "../../entities/Order";
+import { addItemToOrder, changeStatusOrderApi, createOrderApi, deleteOrderApi, getOrders, payOrderApi } from "../Api";
 
 export const getAllOrders = async (): Promise<Order[]> => {
     try{
@@ -44,6 +44,15 @@ export const changeStatus = async (id: number, newStatus: ChangeOrderStatus): Pr
     try{
         const order: Order = await changeStatusOrderApi(id, newStatus);
         return order;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+export const addItem = async(addItems: AddItem[]) => {
+    try{
+        await addItemToOrder(addItems);
     }
     catch(error){
         throw error;

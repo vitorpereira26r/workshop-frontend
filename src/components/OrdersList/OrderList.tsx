@@ -7,6 +7,7 @@ import { deleteOrder, getAllOrders, payOrder } from '../../services/Order/OrderS
 import './OrderList.css'
 import '../List.css'
 import { ChangeStatusModal } from '../ChangeStatusModal/ChangeStatusModal';
+import { AddItemModal } from '../AddItemModal/AddItemModal';
 
 export const OrderList: React.FC = () => {
 
@@ -16,6 +17,8 @@ export const OrderList: React.FC = () => {
   const [orderToDelete, setOrderToDelete] = useState<Order | null>(null);
   const [changeStatusModalOpen, setChangeStatusModalOpen] = useState<boolean>(false);
   const [orderToChangeStatus, setOrderToChangeStatus] = useState<Order | null>(null);
+  const [addItemModalOpen, setAddItemModalOpen] = useState<boolean>(false);
+  const [orderToAddItem, setOrderToAddItem] = useState<Order | null>(null);
 
   useEffect(() => {
     fetchOrders();
@@ -120,7 +123,20 @@ export const OrderList: React.FC = () => {
     if(showDeleteModal){
       return false;
     }
+    if(addItemModalOpen){
+      return false;
+    }
     return true;
+  }
+
+  const closeAddItemModal = () => {
+    setAddItemModalOpen(false);
+    setOrderToAddItem(null);
+  }
+
+  const handleAddItemModalOpen = (order: Order) => {
+    setAddItemModalOpen(true);
+    setOrderToAddItem(order);
   }
 
   return (
@@ -142,6 +158,12 @@ export const OrderList: React.FC = () => {
         isOpen={showDeleteModal}
         onCancel={handleCancelDelete}
         onConfirm={handleConfirmDelete}
+      />
+      <AddItemModal
+        title="Add Item to Order"
+        isOpen={addItemModalOpen}
+        onClose={closeAddItemModal}
+        order={orderToAddItem}
       />
       <div className='list'>
         {showAddButton() && (
@@ -183,12 +205,15 @@ export const OrderList: React.FC = () => {
                   <button className='pay-btn' onClick={() => handlePay(order)}>
                     Pay
                   </button>
+                  
                 ) : (
                   <button className='change-status-btn' onClick={() => handleChangeStatus(order)}>
                     Change Status
                   </button>
                 )}
-                  <button className='add-item-btn'>Add Itens</button>
+                {order.orderStatus === 'WAITING_PAYMENT' && (
+                  <button className='add-item-btn' onClick={() => handleAddItemModalOpen(order)}>Add Items</button>
+                )}
                   <button className='delete-btn' onClick={() => handleDelete(order)}><img src={deleteIcon} alt="delete" className='delete-btn-img'/></button>
                 </div>
               </li>

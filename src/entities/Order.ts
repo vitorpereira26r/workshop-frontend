@@ -33,3 +33,9 @@ interface Payment{
 export interface ChangeOrderStatus{
     nameOrderStatus: string;
 }
+
+export interface AddItem{
+    orderId: number,
+    productId: number,
+    quantity: number
+}

@@ -1,6 +1,6 @@
 import axios from "axios"
 import { User } from "../entities/User";
-import { Order, OrderProps, ChangeOrderStatus } from "../entities/Order";
+import { Order, OrderProps, ChangeOrderStatus, AddItem } from "../entities/Order";
 import { Product } from "../entities/Product";
 
 export const apiUrl = "https://workshop-springboot3-app-befefc2b19cc.herokuapp.com";
@@ -115,6 +115,21 @@ export const changeStatusOrderApi = async (id: number, nameOrderStatus: ChangeOr
     catch(error){
         console.log("Id: " + id);
         console.log("NameOrderStatus: " + nameOrderStatus);
+        throw error;
+    }
+}
+
+export const addItemToOrder = async (addItems: AddItem[]) => {
+    try{
+        for(let i = 0; i < addItems.length; i++){
+            const addItem = addItems[i];
+
+            const response = await axios.post(apiUrl + "/app/add-item", addItem);
+            console.log(response)
+            console.log(response.data)
+        }
+    }
+    catch(error){
         throw error;
     }
 }

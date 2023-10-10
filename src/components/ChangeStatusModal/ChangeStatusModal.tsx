@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Modal } from '../Modal/Modal'
 import { Order, ChangeOrderStatus } from '../../entities/Order';
 import { changeStatus } from '../../services/Order/OrderServices';
+import './ChangeStatusModal.css'
 
 interface Props{
     title: string;
@@ -43,6 +44,7 @@ export const ChangeStatusModal:React.FC<Props> = ({
         editOrderToList(newOrder);
         onClose();
     }
+    selectedOption.nameOrderStatus="";
   }
 
   const handleChange = (option: ChangeOrderStatus) => {
@@ -56,15 +58,15 @@ export const ChangeStatusModal:React.FC<Props> = ({
         isOpen={isOpen}
         onClose={onClose}
     >
-        <ul>
+        <ul className='options'>
             {options.map((option) => (
-                <li key={option.nameOrderStatus}>
-                    <button onClick={() => handleChange(option)}>{option.nameOrderStatus}</button>
+                <li key={option.nameOrderStatus} className='option'>
+                    <button className={selectedOption.nameOrderStatus === option.nameOrderStatus ? 'option-button-selected' : 'option-button'} onClick={() => handleChange(option)}>{option.nameOrderStatus}</button>
                 </li>
             ))}
         </ul>
         <div>
-            <button onClick={handleSubmit}>Change Status</button>
+            <button className='submit-button' onClick={handleSubmit}>Change Status</button>
         </div>
     </Modal>
   )

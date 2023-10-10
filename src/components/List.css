@@ -33,11 +33,11 @@
     transition: 0.06s;
     /*position: relative;*/ /* isso pode ser mudado, so estava em OrderList.css */
 }
-
+/*
 .list-card:hover{
     transform: scale(1.009);
     background-color: #d0d2e9;
-}
+}*/
 
 .add-button{
     position: fixed;
