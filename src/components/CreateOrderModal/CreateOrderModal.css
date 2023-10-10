@@ -1,0 +1,18 @@
+/* CreateOrderModal.css */
+
+.custom-modal {
+    /* Estilos personalizados para o modal do CreateOrderModal */
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 1001; /* Ajuste conforme necessário para a sobreposição correta */
+  }
+  
+  .form-actions {
+    margin-top: 300px;
+  }
+  
+  /* Outros estilos do dropdown permanecem inalterados */
+  

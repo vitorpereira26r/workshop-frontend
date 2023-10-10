@@ -5,9 +5,10 @@ import { CreateUserModal } from '../CreateUserModal/CreateUserModal';
 import user_icon from '../../assets/icons/user-icon.png';
 import editIcon from '../../assets/icons/edit-icon.png'
 import deleteIcon from '../../assets/icons/delete-icon-red.png'
-import './UserList.css'
-import { DeleteConfirmationModal } from '../DeleteConfirmationModal/DeleteConfirmationModal';
 import { EditUserModal } from '../EditUserModal/EditUserModal';
+import { DeleteConfirmationModal } from '../DeleteConfirmationModal/DeleteConfirmationModal';
+import './UserList.css'
+import '../List.css'
 
 export const UserList:React.FC = () => {
 
@@ -123,25 +124,27 @@ export const UserList:React.FC = () => {
         editUserToList={editUserToList}
         user={userToEdit}
       />
-      <div className='users'>
+      <div className='list'>
+        {!showAddModal && (
+          <div className='add-button'>
+            <button onClick={handleAddButtonClick}>Create User</button>
+          </div>
+        )}
         <div>
-          <button className='add-button' onClick={handleAddButtonClick}>Create User</button>
-        </div>
-        <div>
-          <ul className="user-list">
+          <ul className="list-list">
             {users.map((user) => (
-              <li key={user.id} className="user-card">
+              <li key={user.id} className="list-card">
                 <div className="user-image">
                   <img src={user_icon}/>
                 </div>
-                <div className="user-info">
-                  <span className='user-data name yellow-font'>{user.name}</span>
-                  <span className='user-data email blue-font'>{user.email}</span>
-                  <span className='user-data phone green-font'>{user.phone}</span>
+                <div className="list-info">
+                  <span className='list-data name yellow-font'>{user.name}</span>
+                  <span className='list-data email'>{user.email}</span>
+                  <span className='list-data phone'>{user.phone}</span>
                 </div>
                 <div className='delete-edit'>
                   <button className='edit-btn' onClick={() => handleEdit(user)}><img src={editIcon} alt="edit" /></button>
-                  <button className='delete-btn' onClick={() => handleDelete(user)}><img src={deleteIcon} alt="delete" className='delete-btn'/></button>
+                  <button className='delete-btn' onClick={() => handleDelete(user)}><img src={deleteIcon} alt="delete"/></button>
                 </div>
               </li>
             ))}

@@ -1,80 +1,12 @@
 
-  .users{
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  .users h2 {
-    font-size: 24px; 
-    font-weight: bold;
-    color: #000000; 
-    text-align: center; 
-    margin-bottom: 20px; 
-    text-transform: uppercase;
-    letter-spacing: 2px; 
-  }
-
-  .user-list {
-    position: relative;
-    width: 1000px;
-    margin: 0 auto;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
-  .user-card {
-    display: flex;
-    color: black;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    margin: 5px 0;
-    align-items: center;
-    transition: 0.6s;
-  }
-
-  .user-card:hover {
-    transform: scale(1.009);
-    background-color: #d0d2e9;
-  }
-
-  .add-button{
-    font-size: 18px;
-    background-color: #2e8b57;
-    color: #0f2e1c;
-    width: 200px;
-    height: 40px;
-    border: 2px solid #0f2e1c;
-    border-radius: 7px;
-    cursor: pointer;
-  }
-
-  .add-button:hover{
-    background-color: #1f613c;
-    transform: scale(1.02);
-  }
-
   .user-image {
     flex: 0 0 auto;
     margin-right: 10px;
   }
 
   .user-image img{
-    max-width: 60px;
-  }
-
-  .user-info{
-    flex: 1;
-    display: flex;
-    margin-left: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .user-data{
-    margin-top: 1.3px;
-    margin-bottom: 1.3px;
+    max-width: 25px;
+    max-height: 25px;
   }
 
   .name{
@@ -90,33 +22,26 @@
     font-size: 17px;
   }
 
-  .delete-edit{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .delete-edit button {
+  .edit-btn{
     background-color: transparent;
     width: 45px;
     height: 45px;
     border: 1px solid #000000;
     cursor: pointer;
     border-radius: 10px;
-
     margin-right: 10px;
     padding: 0;
-  }
-
-  .delete-edit button img{
-    max-width: 25px;
-    vertical-align: middle;
-  }
-
-  .delete-btn:hover{
-    background-color: rgb(254, 123, 123);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
   }
 
   .edit-btn:hover{
     background-color: #3f6fff;
+  }
+
+  .edit-btn img{
+    max-width: 25px;
+    max-height: 25px;
+    vertical-align: middle;
   }

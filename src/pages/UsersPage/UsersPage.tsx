@@ -2,7 +2,6 @@ import React from 'react'
 import { Page } from '../Page'
 import { UserList } from '../../components/UserList/UserList'
 import './UsersPage.css'
-import { Modal } from '../../components/Modal/Modal'
 
 export const UsersPage:React.FC = () => {
 
