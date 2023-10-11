@@ -33,7 +33,7 @@ export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose, children }
             <div className='modal-title'>
                 {title}
             </div>
-            <div>
+            <div className='children'>
                 {children}
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal } from '../Modal/Modal';
+import './DeleteConfirmationModal.css'
 
 interface DeleteConfirmationModalProps {
   isOpen: boolean;
@@ -14,8 +15,8 @@ export const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = (
 }) => {
   return (
     <Modal title="Delete Confirmation" isOpen={isOpen} onClose={onCancel}>
-      <p>Are you sure you want to delete this user?</p>
       <div className="modal-actions">
+        <p>Are you sure you want to delete this user?</p>
         <button className="styled-button red-button" onClick={onConfirm}>
           Confirm Delete
         </button>

@@ -146,6 +146,27 @@ export const getProductsApi = async (): Promise<Product[]> => {
     }
 }
 
+export const updateProductApi = async (product: Product, id: number): Promise<Product> =>{
+    try{
+        const response = await axios.put(apiUrl + "/products/" + id, product);
+        const entity: Product = response.data;
+        return entity;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+export const deleteProductApi = async (id: number) => {
+    try{
+        const response = await axios.delete(apiUrl + "/products/" + id);
+        console.log(response);
+    }
+    catch(error){
+        throw error;
+    }
+}
+
 export const getCategoriesApi = async (): Promise<Category[]> => {
     try{
         const response = await axios.get(apiUrl + "/categories");

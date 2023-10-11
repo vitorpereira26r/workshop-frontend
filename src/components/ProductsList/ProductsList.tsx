@@ -2,13 +2,27 @@ import React, { useEffect, useState } from 'react'
 import editIcon from '../../assets/icons/edit-icon.png'
 import deleteIcon from '../../assets/icons/delete-icon-red.png'
 import { Product } from '../../entities/Product'
-import { getProducts } from '../../services/Product/ProductServices';
+import { deleteProduct, getProducts } from '../../services/Product/ProductServices';
 import './ProductsList.css'
 import "../List.css"
+import { EditProductModal } from '../EditProductModal/EditProductModal';
+import { DeleteConfirmationModal } from '../DeleteConfirmationModal/DeleteConfirmationModal';
 
 export const ProductsList:React.FC = () => {
 
+  const inicialProductState: Product = {
+    id: 0,
+    name: "",
+    description: "",
+    price: 0.0,
+    categories: []
+  }
+
   const [products, setProducts] = useState<Product[]>([]);
+  const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
+  const [productToEdit, setProductToEdit] = useState<Product>(inicialProductState);
+  const [deleteModalOpen, setDeleteModalOpen] = useState<boolean>(false);
+  const [productToDelete, setProductToDelete] = useState<Product>(inicialProductState);
 
   useEffect(() => {
     fetchProducts();
@@ -29,8 +43,68 @@ export const ProductsList:React.FC = () => {
     fetchAndSetProducts();
   }
 
+  const handleEditButtonClick = (product: Product) => {
+    setEditModalOpen(true);
+    setProductToEdit(product);
+  }
+
+  const editProductToList = (newProduct: Product) => {
+    const productIndex = products.findIndex((product) => product.id === newProduct.id);
+
+    if(productIndex !== -1){
+      const updatedProducts = [...products];
+      updatedProducts[productIndex] = newProduct;
+      setProducts(updatedProducts);
+    }
+  }
+
+  const onCloseEditModal = () => {
+    setEditModalOpen(false);
+    setProductToEdit(inicialProductState);
+  }
+
+  const handleDeleteButtonClick = (product: Product) => {
+    setDeleteModalOpen(true);
+    setProductToDelete(product);
+  }
+
+  const handleConfirmDelete = async () => {
+    if(productToDelete !== inicialProductState){
+      try{
+        console.log(productToDelete);
+        deleteProduct(productToDelete.id);
+        
+        const updatedProducts = products.filter((product) => product.id !== productToDelete.id);
+        setProducts(updatedProducts);
+      }
+      catch(error){
+        setProducts((prevProducts) => [...prevProducts, productToDelete]);
+        throw error;
+      }
+      setDeleteModalOpen(false);
+      setProductToDelete(inicialProductState);
+    }
+  }
+
+  const handleCancelDelete = () => {
+    setDeleteModalOpen(false);
+    setProductToDelete(inicialProductState);
+  }
+
   return (
     <div>
+      <EditProductModal
+        title={"Edit Product"}
+        isOpen={editModalOpen}
+        onClose={onCloseEditModal}
+        editProductToList={editProductToList}
+        product={productToEdit}
+      />
+      <DeleteConfirmationModal
+        isOpen={deleteModalOpen}
+        onConfirm={handleConfirmDelete}
+        onCancel={handleCancelDelete}
+      />
         <div className='list'>
             <div>
                 <ul className='list-list'>
@@ -42,8 +116,8 @@ export const ProductsList:React.FC = () => {
                                 <span className='list-data'>{formatPrice(product.price)}</span>
                             </div>
                             <div className='delete-edit'>
-                                <button className='edit-btn'><img src={editIcon} alt="edit" /></button>
-                                <button className='delete-btn'><img src={deleteIcon} alt="delete"/></button>
+                                <button className='edit-btn' onClick={() => handleEditButtonClick(product)}><img src={editIcon} alt="edit" /></button>
+                                <button className='delete-btn' onClick={() => handleDeleteButtonClick(product)}><img src={deleteIcon} alt="delete"/></button>
                             </div>
                         </li>
                     ))}

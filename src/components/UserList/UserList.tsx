@@ -104,6 +104,19 @@ export const UserList:React.FC = () => {
     setShowAddModal(false);
   }
 
+  const showAddButton = () => {
+    if(showAddModal){
+      return false;
+    }
+    if(showDeleteModal){
+      return false;
+    }
+    if(showEditModal){
+      return false;
+    }
+    return true;
+  }
+
   return (
     <div>
       <CreateUserModal
@@ -125,7 +138,7 @@ export const UserList:React.FC = () => {
         user={userToEdit}
       />
       <div className='list'>
-        {!showAddModal && (
+        {showAddButton() && (
           <div className='add-button'>
             <button onClick={handleAddButtonClick}>Create User</button>
           </div>

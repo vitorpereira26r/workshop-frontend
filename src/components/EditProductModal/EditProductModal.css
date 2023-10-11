@@ -1,0 +1,56 @@
+
+.create-product-form{
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-group-product{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label{
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+}
+
+.input-name-edit[type="text"]{
+    padding: 10px;
+    width: 400px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.input-description-edit{
+    padding: 10px;
+    width: 400px;
+    height: 100px; /* Defina a altura desejada em pixels */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.input-price-edit[type="number"]{
+    padding: 10px;
+    width: 400px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.form-actions{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.styled-button{
+    width: 400px;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
