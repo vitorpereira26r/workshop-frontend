@@ -4,10 +4,10 @@ import deleteIcon from '../../assets/icons/delete-icon-red.png'
 import { CreateOrderModal } from '../CreateOrderModal/CreateOrderModal';
 import { DeleteConfirmationModal } from '../DeleteConfirmationModal/DeleteConfirmationModal';
 import { deleteOrder, getAllOrders, payOrder } from '../../services/Order/OrderServices';
-import './OrderList.css'
-import '../List.css'
 import { ChangeStatusModal } from '../ChangeStatusModal/ChangeStatusModal';
 import { AddItemModal } from '../AddItemModal/AddItemModal';
+import './OrderList.css'
+import '../List.css'
 
 export const OrderList: React.FC = () => {
 

@@ -23,6 +23,7 @@
 
 .list-card{
     display: flex;
+    flex-direction: flex;
     color: black;
     border: 2px solid black;
     border-radius: 10px;
@@ -31,7 +32,7 @@
     margin: 5px 0;
     align-items: center;
     transition: 0.06s;
-    /*position: relative;*/ /* isso pode ser mudado, so estava em OrderList.css */
+    position: relative; /* isso pode ser mudado, so estava em OrderList.css */
 }
 /*
 .list-card:hover{
@@ -79,7 +80,7 @@
 .delete-edit{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .delete-btn {
@@ -104,4 +105,28 @@
 
 .delete-btn:hover{
     background-color: rgb(254, 123, 123);
+}
+
+.edit-btn{
+    background-color: transparent;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 0;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .edit-btn:hover{
+    background-color: #3f6fff;
+  }
+
+  .edit-btn img{
+    max-width: 25px;
+    max-height: 25px;
+    vertical-align: middle;
 }

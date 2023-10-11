@@ -2,6 +2,7 @@ import axios from "axios"
 import { User } from "../entities/User";
 import { Order, OrderProps, ChangeOrderStatus, AddItem } from "../entities/Order";
 import { Product } from "../entities/Product";
+import { Category } from "../entities/Category";
 
 export const apiUrl = "https://workshop-springboot3-app-befefc2b19cc.herokuapp.com";
 //const devApiUrl = "http://localhost:8080"
@@ -139,6 +140,17 @@ export const getProductsApi = async (): Promise<Product[]> => {
         const response = await axios.get(apiUrl + "/products");
         const products: Product[] = response.data;
         return products;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+export const getCategoriesApi = async (): Promise<Category[]> => {
+    try{
+        const response = await axios.get(apiUrl + "/categories");
+        const categories: Category[] = response.data;
+        return categories
     }
     catch(error){
         throw error;

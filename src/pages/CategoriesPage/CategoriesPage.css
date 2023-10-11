@@ -1,0 +1,10 @@
+.title{
+    color: black;
+    margin-top: 10px;
+}
+
+.category-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -3,6 +3,8 @@ import './App.css'
 import Home from './pages/Home/Home';
 import { UsersPage } from './pages/UsersPage/UsersPage';
 import { OrdersPage } from './pages/OrdersPage/OrdersPage';
+import { ProductsPage } from './pages/Products/ProductsPage';
+import { CategoriesPage } from './pages/CategoriesPage/CategoriesPage';
 
 function App() {
 
@@ -12,6 +14,8 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path='/users' element={<UsersPage/>}/>
         <Route path='/orders' element={<OrdersPage/>}/>
+        <Route path='/products' element={<ProductsPage/>}/>
+        <Route path='/categories' element={<CategoriesPage/>}/>
       </Routes>
     </Router>
   )

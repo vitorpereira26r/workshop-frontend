@@ -10,10 +10,10 @@ export const Navbar: React.FC = () => {
                 <li><button className='btn-li'><a href="/">Home</a></button></li>
                 <li><button className='btn-li'><a href="/users">Users</a></button></li>
                 <li><button className='btn-li'><a href="/orders">Orders</a></button></li>
-                <li><button className='btn-li'><a href="#">Button 4</a></button></li>
+                <li><button className='btn-li'><a href="/products">Products</a></button></li>
+                <li><button className='btn-li'><a href="/categories">Categories</a></button></li>
             </ul>
         </nav>
-        <a className='cta' href="#"><button className='btn-out'>About</button></a>
     </header>
   )
 }
