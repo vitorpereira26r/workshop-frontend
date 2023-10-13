@@ -24,16 +24,16 @@ export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose, children }
   }
 
   return (
-    <div className='modal'>
-        <div className='modal-overlay' onClick={handleOverlayClick} ref={overlayRef}/>
-        <div className='modal-box'>
-            <button className='modal-close-btn' onClick={onClose}>
-                <img src={closeIcon} alt="close-modal" />
+    <div className='modal-me'>
+        <div className='modal-me-overlay' onClick={handleOverlayClick} ref={overlayRef}/>
+        <div className='modal-me-box'>
+            <button className='modal-me-close-btn' onClick={onClose}>
+                <img src={closeIcon} alt="close-modal-me" />
             </button>
-            <div className='modal-title'>
+            <div className='modal-me-title'>
                 {title}
             </div>
-            <div className='children'>
+            <div className='children-me'>
                 {children}
             </div>
         </div>

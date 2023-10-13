@@ -2,11 +2,10 @@
   .dropdown-input {
     position: relative;
     margin-bottom: 20px;
-    display: inline-block;
   }
   
   input[type="text"] {
-    width: 200px;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -15,20 +14,20 @@
   }
   
   .dropdown-options ul{
-    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     position: absolute;
     top: 100%;
     left: 0;
-    width: 200px;
-    max-height: 150px;
-    overflow-y: auto;
+    width: 100%;
+    background-color: #fff;
     border: 1px solid #ccc;
     border-top: none;
-    border-radius: 0 0 5px 5px;
-    background-color: #000000;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1030;
   }
   
   .dropdown-options li {

@@ -137,27 +137,27 @@ export const UserList:React.FC = () => {
         editUserToList={editUserToList}
         user={userToEdit}
       />
-      <div className='list'>
+      <div className='list-me'>
         {showAddButton() && (
-          <div className='add-button'>
+          <div className='add-button-me'>
             <button onClick={handleAddButtonClick}>Create User</button>
           </div>
         )}
         <div>
-          <ul className="list-list">
+          <ul className="list-list-me">
             {users.map((user) => (
-              <li key={user.id} className="list-card">
-                <div className="user-image">
+              <li key={user.id} className="list-card-me">
+                <div className="user-image-me">
                   <img src={user_icon}/>
                 </div>
-                <div className="list-info">
-                  <span className='list-data name yellow-font'>{user.name}</span>
-                  <span className='list-data email'>{user.email}</span>
-                  <span className='list-data phone'>{user.phone}</span>
+                <div className="list-info-me">
+                  <span className='list-data-me name yellow-font'>{user.name}</span>
+                  <span className='list-data-me email'>{user.email}</span>
+                  <span className='list-data-me phone'>{user.phone}</span>
                 </div>
-                <div className='delete-edit'>
-                  <button className='edit-btn' onClick={() => handleEdit(user)}><img src={editIcon} alt="edit" /></button>
-                  <button className='delete-btn' onClick={() => handleDelete(user)}><img src={deleteIcon} alt="delete"/></button>
+                <div className='delete-edit-me'>
+                  <button className='edit-btn-me' onClick={() => handleEdit(user)}><img src={editIcon} alt="edit" /></button>
+                  <button className='delete-btn-me' onClick={() => handleDelete(user)}><img src={deleteIcon} alt="delete"/></button>
                 </div>
               </li>
             ))}

@@ -1,18 +1,52 @@
 /* CreateOrderModal.css */
 
-.custom-modal {
-    /* Estilos personalizados para o modal do CreateOrderModal */
-    width: 60%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    z-index: 1001; /* Ajuste conforme necessário para a sobreposição correta */
-  }
-  
-  .form-actions {
-    margin-top: 300px;
-  }
-  
-  /* Outros estilos do dropdown permanecem inalterados */
-  
+.create-order-modal {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px; /* Define a altura máxima do modal para permitir rolagem */
+  overflow-y: auto;
+  color: black; /* Adicione uma barra de rolagem vertical quando a altura máxima for atingida */
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.user-list li {
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.user-list li.selected {
+  background-color: #31638c;
+  color: #fff;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.styled-button {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.styled-button:hover {
+  background-color: #003e7e;
+}

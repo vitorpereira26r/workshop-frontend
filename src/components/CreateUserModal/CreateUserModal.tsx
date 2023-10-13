@@ -47,8 +47,9 @@ export const CreateUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, ad
     <Modal title={title} isOpen={isOpen} onClose={onClose}>
       <form className="create-user-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label className='label-create-user' htmlFor="name">Name:</label>
           <input
+            className='input-create-user'
             type="text"
             id="name"
             name="name"
@@ -59,6 +60,7 @@ export const CreateUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, ad
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
+            className='input-create-user'
             type="text"
             id="email"
             name="email"
@@ -69,6 +71,7 @@ export const CreateUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, ad
         <div className="form-group">
           <label htmlFor="phone">Phone:</label>
           <input
+            className='input-create-user'
             type="text"
             id="phone"
             name="phone"
@@ -79,6 +82,7 @@ export const CreateUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, ad
         <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
+            className='input-create-user'
             type="password"
             id="password"
             name="password"

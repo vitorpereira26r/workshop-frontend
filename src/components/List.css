@@ -1,9 +1,9 @@
-.list{
+.list-me{
     margin-top: 10px;
     text-align: center;
 }
 
-.list h2{
+.list-me h2{
     font-size: 24px; 
     font-weight: bold;
     color: #000000; 
@@ -13,7 +13,7 @@
     letter-spacing: 2px;
 }
 
-.list-list{
+.list-list-me{
     position: relative;
     width: 1000px;
     margin: 0 auto;
@@ -21,7 +21,7 @@
     box-sizing: border-box;
 }
 
-.list-card{
+.list-card-me{
     display: flex;
     flex-direction: flex;
     color: black;
@@ -40,7 +40,7 @@
     background-color: #d0d2e9;
 }*/
 
-.add-button{
+.add-button-me{
     position: fixed;
     top: 80%;
     left: 50%;
@@ -48,7 +48,7 @@
     z-index: 9999; 
 }
 
-.add-button button{
+.add-button-me button{
     font-size: 18px;
     background-color: #2e8b57;
     color: #0f2e1c;
@@ -59,12 +59,12 @@
     cursor: pointer;
 }
 
-.add-button button:hover{
+.add-button-me button:hover{
     background-color: #1f613c;
     transform: scale(1.02);
 }
 
-.list-info{
+.list-info-me{
     flex: 1;
     display: flex;
     margin-left: 10px;
@@ -72,18 +72,18 @@
     align-items: flex-start;
 }
 
-.list-data{
+.list-data-me{
     margin-top: 1.3px;
     margin-bottom: 1.3px;
 }
 
-.delete-edit{
+.delete-edit-me{
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
 
-.delete-btn {
+.delete-btn-me {
     background-color: transparent;
     width: 45px;
     height: 45px;
@@ -97,17 +97,17 @@
     align-items: center;
 }
 
-.delete-btn img{
+.delete-btn-me img{
     max-width: 60%;
     max-height: 60%;
     vertical-align: middle;
 }
 
-.delete-btn:hover{
+.delete-btn-me:hover{
     background-color: rgb(254, 123, 123);
 }
 
-.edit-btn{
+.edit-btn-me{
     background-color: transparent;
     width: 45px;
     height: 45px;
@@ -121,11 +121,11 @@
     align-items: center;
   }
 
-  .edit-btn:hover{
+  .edit-btn-me:hover{
     background-color: #3f6fff;
   }
 
-  .edit-btn img{
+  .edit-btn-me img{
     max-width: 25px;
     max-height: 25px;
     vertical-align: middle;

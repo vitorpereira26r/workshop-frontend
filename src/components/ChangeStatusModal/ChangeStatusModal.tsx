@@ -34,8 +34,11 @@ export const ChangeStatusModal:React.FC<Props> = ({
         nameOrderStatus: "CANCELED"
     }
     const newOptions = [os1, os2, os3];
+    setSelectedOption({
+        nameOrderStatus:""
+    })
     setOptions(newOptions);
-  }, [])
+  }, [isOpen])
 
   const handleSubmit = async () => {
     if(order !== null){
@@ -44,7 +47,7 @@ export const ChangeStatusModal:React.FC<Props> = ({
         editOrderToList(newOrder);
         onClose();
     }
-    selectedOption.nameOrderStatus="";
+    //selectedOption.nameOrderStatus="";
   }
 
   const handleChange = (option: ChangeOrderStatus) => {
@@ -58,15 +61,15 @@ export const ChangeStatusModal:React.FC<Props> = ({
         isOpen={isOpen}
         onClose={onClose}
     >
-        <ul className='options'>
+        <ul className='options-change-status'>
             {options.map((option) => (
-                <li key={option.nameOrderStatus} className='option'>
-                    <button className={selectedOption.nameOrderStatus === option.nameOrderStatus ? 'option-button-selected' : 'option-button'} onClick={() => handleChange(option)}>{option.nameOrderStatus}</button>
+                <li key={option.nameOrderStatus} className='option-change-status'>
+                    <button className={selectedOption.nameOrderStatus === option.nameOrderStatus ? 'option-change-status-button-selected' : 'option-change-status-button'} onClick={() => handleChange(option)}>{option.nameOrderStatus}</button>
                 </li>
             ))}
         </ul>
         <div>
-            <button className='submit-button' onClick={handleSubmit}>Change Status</button>
+            <button className='submit-change-status-button' onClick={handleSubmit}>Change Status</button>
         </div>
     </Modal>
   )

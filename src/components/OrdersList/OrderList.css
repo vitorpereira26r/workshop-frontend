@@ -4,7 +4,7 @@
     color: #000000;
   }
 
-  .pay-btn{
+  .pay-btn-me{
     background-color: #6260ce;
     color: #000000;
     width: 110px; 
@@ -16,7 +16,7 @@
     cursor: pointer;
   }
 
-  .add-item-btn{
+  .add-item-btn-me{
     background-color: #6260ce;
     color: #000000;
     width: 110px; 
@@ -28,7 +28,7 @@
     cursor: pointer;
   }
 
-  .change-status-btn{
+  .change-status-btn-me{
     background-color: #6260ce;
     color: #000000;
     width: 110px; 
@@ -40,12 +40,12 @@
     cursor: pointer;
   }
 
-  .product-list{
+  .product-list-me{
     margin-top: 5px;
     text-align: left;
   }
 
-  .product-item {
+  .product-item-me {
     color: #000000;
     font-size: 16px;
     margin-top: 3px;
@@ -53,7 +53,7 @@
     margin-left: 20px;
   }
 
-  .product-item p {
+  .product-item-me p {
     margin: 5px 0; 
     font-size: 15px; 
   }

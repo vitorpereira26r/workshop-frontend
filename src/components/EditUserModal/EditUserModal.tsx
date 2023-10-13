@@ -36,10 +36,11 @@ export const EditUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, edit
 
   return (
     <Modal title={title} isOpen={isOpen} onClose={onClose}>
-      <form className="create-user-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
+      <form className="edit-user-form" onSubmit={handleSubmit}>
+        <div className="edit-form-group">
+          <label className='edit-user-label' htmlFor="name">Name:</label>
           <input
+            className='edit-user-input'
             type="text"
             id="name"
             name="name"
@@ -47,9 +48,10 @@ export const EditUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, edit
             onChange={handleInputChange}
           />
         </div>
-        <div className="form-group">
+        <div className="edit-form-group">
           <label htmlFor="email">Email:</label>
           <input
+            className='edit-user-input'
             type="text"
             id="email"
             name="email"
@@ -57,9 +59,10 @@ export const EditUserModal:React.FC<ModalProps> = ({title, isOpen, onClose, edit
             onChange={handleInputChange}
           />
         </div>
-        <div className="form-group">
+        <div className="edit-form-group">
           <label htmlFor="phone">Phone:</label>
           <input
+            className='edit-user-input'
             type="text"
             id="phone"
             name="phone"

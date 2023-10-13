@@ -1,10 +1,10 @@
 
-  .user-image {
+  .user-image-me {
     flex: 0 0 auto;
     margin-right: 10px;
   }
 
-  .user-image img{
+  .user-image-me img{
     max-width: 25px;
     max-height: 25px;
   }

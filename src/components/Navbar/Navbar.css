@@ -13,7 +13,7 @@ header {
     padding: 20px 10%;
 }
 
-h1 {
+.title-navbar {
     color: #edf0f1;
 }
 
@@ -24,24 +24,26 @@ li, a, button {
     text-decoration: none;
 }
 
-.nav-link{
+.nav-link-me{
     list-style: none;
 }
 
-.nav-link li{
+.nav-link-me li{
     display: inline-block;
     padding: 0px 20px;
 }
 
-.nav-link a {
+.nav-link-me a {
+    text-decoration: none;
+    color: inherit;
     transition: all 0.3s ease 0s;
 }
 
-.nav-link li a:hover{
+.nav-link-me li a:hover{
     color: #ffffff;
 }
 
-.btn-li{
+.btn-li-navbar{
     padding: 9px 25px;
     background-color: #24252A;
     border: none;
@@ -50,7 +52,7 @@ li, a, button {
     transition: all 0.3s ease 0s;
 }
 
-.btn-li:hover{
+.btn-li-navbar:hover{
     background-color: #303138;
 }
 

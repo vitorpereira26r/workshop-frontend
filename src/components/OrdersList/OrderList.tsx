@@ -165,31 +165,31 @@ export const OrderList: React.FC = () => {
         onClose={closeAddItemModal}
         order={orderToAddItem}
       />
-      <div className='list'>
+      <div className='list-me'>
         {showAddButton() && (
-          <div className='add-button'>
+          <div className='add-button-me'>
             <button onClick={handleAddButtonClick}>Create Order</button>
           </div>
         )}
         <div>
-          <ul className="list-list">
+          <ul className="list-list-me">
             {orders.map((order) => (
-              <li key={order.id} className="list-card">
-                <div className="list-info">
-                  <div className="list-data">
+              <li key={order.id} className="list-card-me">
+                <div className="list-info-me">
+                  <div className="list-data-me">
                     <strong>Order ID:</strong> {order.id}
                   </div>
-                  <span className='list-data'>{formatBackendDate(order.moment)}</span>
-                  <span className='list-data'>{order.orderStatus}</span>
-                  <span className='list-data'>{order.client.name}</span>
-                  <div className="list-data">
+                  <span className='list-data-me'>{formatBackendDate(order.moment)}</span>
+                  <span className='list-data-me'>{order.orderStatus}</span>
+                  <span className='list-data-me'>{order.client.name}</span>
+                  <div className="list-data-me">
                     <strong>Total:</strong> ${order.total.toFixed(2)}
                   </div>
-                  <div className='list-data'>
+                  <div className='list-data-me'>
                     <strong>Products: </strong>
-                    <ul className='product-list'>
+                    <ul className='product-list-me'>
                       {order.items.map((item) => 
-                      <li key={item.product.id} className='product-item'>
+                      <li key={item.product.id} className='product-item-me'>
                         <p>Name: {item.product.name}</p>
                         <p>Description: {item.product.description}</p>
                         <p>Price per item: ${item.product.price}</p>
@@ -200,21 +200,21 @@ export const OrderList: React.FC = () => {
                     </ul>
                   </div>
                 </div>
-                <div className='delete-edit'>
+                <div className='delete-edit-me'>
                   {order.orderStatus === 'WAITING_PAYMENT' ? (
-                  <button className='pay-btn' onClick={() => handlePay(order)}>
+                  <button className='pay-btn-me' onClick={() => handlePay(order)}>
                     Pay
                   </button>
                   
                 ) : (
-                  <button className='change-status-btn' onClick={() => handleChangeStatus(order)}>
+                  <button className='change-status-btn-me' onClick={() => handleChangeStatus(order)}>
                     Change Status
                   </button>
                 )}
                 {order.orderStatus === 'WAITING_PAYMENT' && (
-                  <button className='add-item-btn' onClick={() => handleAddItemModalOpen(order)}>Add Items</button>
+                  <button className='add-item-btn-me' onClick={() => handleAddItemModalOpen(order)}>Add Items</button>
                 )}
-                  <button className='delete-btn' onClick={() => handleDelete(order)}><img src={deleteIcon} alt="delete" className='delete-btn-img'/></button>
+                  <button className='delete-btn-me' onClick={() => handleDelete(order)}><img src={deleteIcon} alt="delete" className='delete-btn-me-img'/></button>
                 </div>
               </li>
             ))}

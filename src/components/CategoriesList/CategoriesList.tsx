@@ -27,12 +27,12 @@ export const CategoriesList: React.FC = () => {
 
   return (
     <div>
-        <div className='list'>
+        <div className='list-me'>
             <div>
-                <ul className='list-list'>
+                <ul className='list-list-me'>
                     {categories.map((category) => (
-                        <li key={category.id} className='list-card'>
-                            <div className='list-info'>
+                        <li key={category.id} className='list-card-me'>
+                            <div className='list-info-me'>
                                 <span>{formatCategory(category)}</span>
                             </div>
                         </li>

@@ -23,6 +23,7 @@ export const AddItemModal:React.FC<Props> = ({
   const [products, setProducts] = useState<Product[]>([]);
   const [selectedProducts, setSelectedProducts] = useState<AddItem[]>([]);
   const [quantityInputs, setQuantityInputs] = useState<{ [productId: number]: number }>({});
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   useEffect(() => {
     if (!isOpen) {
@@ -70,12 +71,16 @@ export const AddItemModal:React.FC<Props> = ({
   const getItemClass = (productId: number) => {
     const isProductAdded = selectedProducts.some(item => item.productId === productId);
     return `product-item-add ${isProductAdded ? 'product-item-added' : ''}`;
-}
+  }
 
-const handleSubmit = async () => {
+  const handleSubmit = async () => {
     await addItem(selectedProducts);
     onClose();
-}
+  }
+
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <Modal
@@ -83,18 +88,27 @@ const handleSubmit = async () => {
         isOpen={isOpen}
         onClose={onClose}
     >
-        <ul className='products-items-add'>
-            {products.map((product) => (
+        <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search by product name"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+        <div className='scrollable-list'>
+        <ul className='products-items-add-me'>
+            {filteredProducts.map((product) => (
                 <li key={product.id} className={getItemClass(product.id)}>
-                    <div className='product-add-info'>
-                        <span className='product-item-add-name'>Name: {product.name}</span>
-                        <span className='product-item-add-description'>Description: {product.description}</span>
-                        <span className='product-item-add-price'>Price {product.price}</span>
+                    <div className='product-add-info-me'>
+                        <span className='product-item-add-name-me'>Name: {product.name}</span>
+                        <span className='product-item-add-description-me'>Description: {product.description}</span>
+                        <span className='product-item-add-price-me'>Price {product.price}</span>
                     </div>
-                    <div className='submit-info-add'>
+                    <div className='submit-info-add-me'>
                         <input
                             type="number"
-                            className='quantity-of-item'
+                            className='quantity-of-item-me'
                             placeholder='Quantity'
                             value={quantityInputs[product.id] || 0}
                             onChange={(e) => {
@@ -102,13 +116,14 @@ const handleSubmit = async () => {
                                 setQuantityInputs({ ...quantityInputs, [product.id]: value });
                             }}
                         />
-                        <button className='add-item-order-button' onClick={() => handleAddItem(product.id)}>Add Item</button>
+                        <button className='add-item-order-button-me' onClick={() => handleAddItem(product.id)}>Add Item</button>
                     </div>
                 </li>
             ))}
         </ul>
-        <div className='submit-itens-to-order-container'>
-            <button className='submit-itens-to-order' onClick={handleSubmit}>Submit Itens</button>
+        </div>
+        <div className='submit-itens-to-order-container-me'>
+            <button className='submit-itens-to-order-me' onClick={handleSubmit}>Submit Itens</button>
         </div>
     </Modal>
   )

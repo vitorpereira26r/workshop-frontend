@@ -1,5 +1,5 @@
 
-.modal {
+.modal-me {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,10 +8,10 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
+    z-index: 1020;
 }
 
-.modal-overlay{
+.modal-me-overlay{
     position: absolute;
     top: 0;
     left: 0;
@@ -20,7 +20,7 @@
     background-color: rgba(0, 0, 0, .8);
 }
 
-.modal-box{
+.modal-me-box{
     position: relative;
     width: 50%;
     margin: 0 10%;
@@ -30,7 +30,7 @@
     background-color: #fff;
 }
 
-.modal-close-btn{
+.modal-me-close-btn{
     position: absolute;
     top: 20px;
     right: 20px;
@@ -42,22 +42,22 @@
     height: 50px;
 }
 
-.children{
+.children-me{
 
 }
 
-.modal-close-btn:hover{
+.modal-me-close-btn:hover{
     background-color: #d1cdcd;
 }
 
-.modal-close-btn img{
+.modal-me-close-btn img{
     max-width: 30px;
 }
 
-.modal-title{
+.modal-me-title{
     font-size: 30px;
 }
 
-.modal-content{
+.modal-me-content{
     margin-top: 50px;
 }

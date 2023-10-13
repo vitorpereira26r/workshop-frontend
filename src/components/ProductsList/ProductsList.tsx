@@ -19,6 +19,7 @@ export const ProductsList:React.FC = () => {
   }
 
   const [products, setProducts] = useState<Product[]>([]);
+  const [addModalOpen, setAddModalOpen] = useState<boolean>(false);
   const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
   const [productToEdit, setProductToEdit] = useState<Product>(inicialProductState);
   const [deleteModalOpen, setDeleteModalOpen] = useState<boolean>(false);
@@ -91,6 +92,20 @@ export const ProductsList:React.FC = () => {
     setProductToDelete(inicialProductState);
   }
 
+  const handleAddButtonClick = () => {
+
+  }
+
+  const showAddButton = () => {
+    if(editModalOpen){
+      return false;
+    }
+    if(deleteModalOpen){
+      return false;
+    }
+    return true;
+  }
+
   return (
     <div>
       <EditProductModal
@@ -105,19 +120,24 @@ export const ProductsList:React.FC = () => {
         onConfirm={handleConfirmDelete}
         onCancel={handleCancelDelete}
       />
-        <div className='list'>
+        <div className='list-me'>
+        {showAddButton() && (
+          <div className='add-button-me'>
+            <button onClick={handleAddButtonClick}>Create Order</button>
+          </div>
+        )}
             <div>
-                <ul className='list-list'>
+                <ul className='list-list-me'>
                     {products.map((product) => (
-                        <li key={product.id} className='list-card'>
-                            <div className='list-info'>
-                                <span className='list-data'>{product.name}</span>
-                                <span className='list-data'>{product.description}</span>
-                                <span className='list-data'>{formatPrice(product.price)}</span>
+                        <li key={product.id} className='list-card-me'>
+                            <div className='list-info-me'>
+                                <span className='list-data-me'>{product.name}</span>
+                                <span className='list-data-me'>{product.description}</span>
+                                <span className='list-data-me'>{formatPrice(product.price)}</span>
                             </div>
-                            <div className='delete-edit'>
-                                <button className='edit-btn' onClick={() => handleEditButtonClick(product)}><img src={editIcon} alt="edit" /></button>
-                                <button className='delete-btn' onClick={() => handleDeleteButtonClick(product)}><img src={deleteIcon} alt="delete"/></button>
+                            <div className='delete-edit-me'>
+                                <button className='edit-btn-me' onClick={() => handleEditButtonClick(product)}><img src={editIcon} alt="edit" /></button>
+                                <button className='delete-btn-me' onClick={() => handleDeleteButtonClick(product)}><img src={deleteIcon} alt="delete"/></button>
                             </div>
                         </li>
                     ))}
