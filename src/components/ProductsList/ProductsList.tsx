@@ -149,9 +149,9 @@ export const ProductsList:React.FC = () => {
                     {products.map((product) => (
                         <li key={product.id} className='list-card-me'>
                             <div className='list-info-me'>
-                                <span className='list-data-me'>{product.name}</span>
-                                <span className='list-data-me'>{product.description}</span>
-                                <span className='list-data-me'>{formatPrice(product.price)}</span>
+                                <span className='list-data-me'><strong>Name: </strong>{product.name}</span>
+                                <span className='list-data-me'><strong>Description: </strong>{product.description}</span>
+                                <span className='list-data-me'><strong>Price: </strong>{formatPrice(product.price)}</span>
                                 <div className="categories-container-me">
                                   {product.categories.map((category) => (
                                     <span key={category.id} className="category-me">{category.name}</span>

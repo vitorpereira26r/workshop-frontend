@@ -151,9 +151,9 @@ export const UserList:React.FC = () => {
                   <img src={user_icon}/>
                 </div>
                 <div className="list-info-me">
-                  <span className='list-data-me name yellow-font'>{user.name}</span>
-                  <span className='list-data-me email'>{user.email}</span>
-                  <span className='list-data-me phone'>{user.phone}</span>
+                  <span className='list-data-me name yellow-font'>Username: {user.name}</span>
+                  <span className='list-data-me email'><strong>Email: </strong>{user.email}</span>
+                  <span className='list-data-me phone'><strong>Phone Number: </strong>{user.phone}</span>
                 </div>
                 <div className='delete-edit-me'>
                   <button className='edit-btn-me' onClick={() => handleEdit(user)}><img src={editIcon} alt="edit" /></button>

@@ -17,10 +17,10 @@ export const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = (
     <Modal title="Delete Confirmation" isOpen={isOpen} onClose={onCancel}>
       <div className="modal-actions">
         <p>Are you sure you want to delete this user?</p>
-        <button className="styled-button red-button" onClick={onConfirm}>
+        <button className="styled-button-me red-button-me" onClick={onConfirm}>
           Confirm Delete
         </button>
-        <button className="styled-button blue-button" onClick={onCancel}>
+        <button className="styled-button-me blue-button-me" onClick={onCancel}>
           Cancel
         </button>
       </div>

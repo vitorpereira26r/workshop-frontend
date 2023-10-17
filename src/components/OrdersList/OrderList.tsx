@@ -179,9 +179,9 @@ export const OrderList: React.FC = () => {
                   <div className="list-data-me">
                     <strong>Order ID:</strong> {order.id}
                   </div>
-                  <span className='list-data-me'>{formatBackendDate(order.moment)}</span>
-                  <span className='list-data-me'>{order.orderStatus}</span>
-                  <span className='list-data-me'>{order.client.name}</span>
+                  <span className='list-data-me'><strong>Moment: </strong>{formatBackendDate(order.moment)}</span>
+                  <span className='list-data-me'><strong>Order Status: </strong>{order.orderStatus}</span>
+                  <span className='list-data-me'><strong>Client name: </strong>{order.client.name}</span>
                   <div className="list-data-me">
                     <strong>Total:</strong> ${order.total.toFixed(2)}
                   </div>
