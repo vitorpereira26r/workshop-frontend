@@ -1,0 +1,82 @@
+
+.create-product-form{
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-group-product{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label{
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+}
+
+.input-name-edit[type="text"]{
+    padding: 10px;
+    width: 400px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.input-description-edit{
+    padding: 10px;
+    width: 400px;
+    height: 100px; /* Defina a altura desejada em pixels */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.input-price-edit[type="number"]{
+    padding: 10px;
+    width: 400px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.form-actions{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.styled-button{
+    width: 400px;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 200px; /* Set a maximum height and enable overflow for a scrolling effect */
+    overflow-y: auto;
+  }
+  
+  .category-button {
+    padding: 8px 16px;
+    color: black;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .category-button.selected {
+    background-color: #007bff;
+    color: #000000;
+  }
+  
+  .category-button:hover {
+    background-color: #e0e0e0;
+  }

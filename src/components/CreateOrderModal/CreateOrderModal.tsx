@@ -19,21 +19,30 @@ export const CreateOrderModal: React.FC<ModalProps> = ({
   onClose,
   addOrderToList,
 }) => {
+
+  const initialUserState: User = {
+    id: 0,
+    name: '',
+    email: '',
+    phone: '',
+    password: '',
+  };
+  
   const initialOrderState: OrderProps = {
-    client: null,
+    client: initialUserState,
     itens: [],
     total: 0.0,
   };
 
   const [order, setOrder] = useState<OrderProps>(initialOrderState);
   const [users, setUsers] = useState<User[]>([]);
-  const [selectedUser, setSelectedUser] = useState<string | null>(null);
+  const [selectedUser, setSelectedUser] = useState<User>(initialUserState);
 
   useEffect(() => {
     fetchUsers();
     if (!isOpen) {
       setOrder(initialOrderState);
-      setSelectedUser(null);
+      setSelectedUser(initialUserState);
     }
   }, [isOpen]);
 
@@ -50,25 +59,37 @@ export const CreateOrderModal: React.FC<ModalProps> = ({
     fetchAndSetUsers();
   };
 
-  const handleUserSelection = (username: string | null) => {
-    setSelectedUser(username);
+  const handleUserSelection = (user: User) => {
+    console.log("User: ");
+    console.log(user);
+
+    setSelectedUser(user);
+
+    const newOrder: OrderProps = {
+      client: user,
+      itens: [],
+      total: 0.0,
+    };
+
+    setOrder(newOrder);
   };
 
   const handleSubmit = async () => {
-    if (selectedUser) {
-      const user = users.find((u) => u.name === selectedUser);
+    console.log("Selected User: ");
+    console.log(selectedUser);
 
-      if (user) {
-        setOrder((prevOrder) => ({
-          ...prevOrder,
-          client: user,
-        }));
+    console.log(order);
 
-        const newOrder: Order = await createOrder(order);
-        addOrderToList(newOrder);
-        onClose();
-      }
+    if(order.client !== initialUserState){
+      const newOrder: Order = await createOrder(order);
+      addOrderToList(newOrder);
+      onClose();
     }
+    else{
+      console.log("user null");
+      console.log(order.client);
+    }
+
   };
 
   return (
@@ -84,8 +105,8 @@ export const CreateOrderModal: React.FC<ModalProps> = ({
             {users.map((user) => (
               <li
                 key={user.id}
-                className={user.name === selectedUser ? 'selected' : ''}
-                onClick={() => handleUserSelection(user.name)}
+                className={user === selectedUser ? 'selected' : ''}
+                onClick={() => handleUserSelection(user)}
               >
                 {user.name}
               </li>

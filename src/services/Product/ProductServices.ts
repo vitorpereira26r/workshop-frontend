@@ -1,10 +1,20 @@
 import { Product } from "../../entities/Product";
-import { deleteProductApi, getProductsApi, updateProductApi } from "../Api";
+import { createProductApi, deleteProductApi, getProductsApi, updateProductApi } from "../Api";
 
 export const getProducts = async (): Promise<Product[]> => {
     try{
         const products: Product[] = await getProductsApi();
         return products;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+export const createProduct = async (product: Product): Promise<Product> => {
+    try{
+        const newProduct: Product = await createProductApi(product);
+        return newProduct;
     }
     catch(error){
         throw error;

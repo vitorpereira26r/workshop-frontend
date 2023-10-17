@@ -7,6 +7,7 @@ import './ProductsList.css'
 import "../List.css"
 import { EditProductModal } from '../EditProductModal/EditProductModal';
 import { DeleteConfirmationModal } from '../DeleteConfirmationModal/DeleteConfirmationModal';
+import { CreateProductModal } from '../CreateProductModal/CreateProductModal';
 
 export const ProductsList:React.FC = () => {
 
@@ -93,7 +94,15 @@ export const ProductsList:React.FC = () => {
   }
 
   const handleAddButtonClick = () => {
+    setAddModalOpen(true);
+  }
 
+  const closeAddModal = () =>{
+    setAddModalOpen(false);
+  }
+
+  const addProductToList = (newProduct: Product) => {
+    setProducts((prevProducts) => [...prevProducts, newProduct]);
   }
 
   const showAddButton = () => {
@@ -103,11 +112,20 @@ export const ProductsList:React.FC = () => {
     if(deleteModalOpen){
       return false;
     }
+    if(addModalOpen){
+      return false;
+    }
     return true;
   }
 
   return (
     <div>
+      <CreateProductModal
+        title='Create Product'
+        isOpen={addModalOpen}
+        onClose={closeAddModal}
+        addProductToList={addProductToList}
+      />
       <EditProductModal
         title={"Edit Product"}
         isOpen={editModalOpen}
@@ -123,7 +141,7 @@ export const ProductsList:React.FC = () => {
         <div className='list-me'>
         {showAddButton() && (
           <div className='add-button-me'>
-            <button onClick={handleAddButtonClick}>Create Order</button>
+            <button onClick={handleAddButtonClick}>Create Product</button>
           </div>
         )}
             <div>
@@ -134,6 +152,11 @@ export const ProductsList:React.FC = () => {
                                 <span className='list-data-me'>{product.name}</span>
                                 <span className='list-data-me'>{product.description}</span>
                                 <span className='list-data-me'>{formatPrice(product.price)}</span>
+                                <div className="categories-container-me">
+                                  {product.categories.map((category) => (
+                                    <span key={category.id} className="category-me">{category.name}</span>
+                                  ))}
+                                </div>
                             </div>
                             <div className='delete-edit-me'>
                                 <button className='edit-btn-me' onClick={() => handleEditButtonClick(product)}><img src={editIcon} alt="edit" /></button>
@@ -148,6 +171,9 @@ export const ProductsList:React.FC = () => {
   )
 }
 
-function formatPrice(price: number): string{
+function formatPrice(price: number | undefined): string {
+  if (typeof price === 'number') {
     return "$" + price.toFixed(2);
+  }
+  return "$" + price + ".00"; 
 }

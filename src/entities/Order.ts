@@ -20,7 +20,7 @@ export interface OrderItem{
 }
 
 export interface OrderProps{
-    client: User | null,
+    client: User,
     itens: Product[],
     total: number
 }

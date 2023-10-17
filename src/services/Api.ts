@@ -4,8 +4,8 @@ import { Order, OrderProps, ChangeOrderStatus, AddItem } from "../entities/Order
 import { Product } from "../entities/Product";
 import { Category } from "../entities/Category";
 
-export const apiUrl = "https://workshop-springboot3-app-befefc2b19cc.herokuapp.com";
-//const devApiUrl = "http://localhost:8080"
+export const apiUrl = "https://workshop-springboot3-app-befefc2b19cc.herokuapp.com"; // heroku server
+//export const apiUrl = "http://localhost:8080"; // localhost
 
 export const fetchUsers = async (): Promise<User[]> => {
     try{
@@ -143,6 +143,18 @@ export const getProductsApi = async (): Promise<Product[]> => {
     }
     catch(error){
         throw error;
+    }
+}
+
+export const createProductApi = async (product: Product): Promise<Product> => {
+    try{
+        const response = await axios.post(apiUrl + "/products", product);
+        const newProduct: Product = response.data;
+        return newProduct;
+    }
+    catch(error){
+        throw error;
+        
     }
 }
 

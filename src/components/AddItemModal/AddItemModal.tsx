@@ -90,6 +90,7 @@ export const AddItemModal:React.FC<Props> = ({
     >
         <div className="search-bar">
         <input
+        className='input-search-bar-add-item'
           type="text"
           placeholder="Search by product name"
           value={searchTerm}
@@ -99,7 +100,7 @@ export const AddItemModal:React.FC<Props> = ({
         <div className='scrollable-list'>
         <ul className='products-items-add-me'>
             {filteredProducts.map((product) => (
-                <li key={product.id} className={getItemClass(product.id)}>
+                <li key={product.id} className={`product-item-add ${selectedProducts.some(item => item.productId === product.id) ? 'product-item-added' : ''}`}>
                     <div className='product-add-info-me'>
                         <span className='product-item-add-name-me'>Name: {product.name}</span>
                         <span className='product-item-add-description-me'>Description: {product.description}</span>

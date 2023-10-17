@@ -1,0 +1,15 @@
+.categories-container-me {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .category-me {
+    background-color: #2e8b57;
+    color: #ffffff;
+    padding: 4px 8px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
