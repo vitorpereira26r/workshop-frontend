@@ -47,3 +47,4 @@ export const CategoriesList: React.FC = () => {
 function formatCategory (category: Category): string{
     return category.id + ". " + category.name;
 }
+///opa
