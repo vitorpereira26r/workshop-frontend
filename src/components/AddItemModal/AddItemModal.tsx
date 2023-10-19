@@ -67,11 +67,11 @@ export const AddItemModal:React.FC<Props> = ({
 
     console.log(selectedProducts);
   }
-
+/*
   const getItemClass = (productId: number) => {
     const isProductAdded = selectedProducts.some(item => item.productId === productId);
     return `product-item-add ${isProductAdded ? 'product-item-added' : ''}`;
-  }
+  }*/
 
   const handleSubmit = async () => {
     await addItem(selectedProducts);
