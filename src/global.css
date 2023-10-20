@@ -67,4 +67,11 @@ body {
   .green-font{
     color: #28a745;
   }
+
+  @media screen and (max-width: 986px){
+    .styled-button-me{
+      height: 150px;
+      width: 250px;
+    }
+  }
   

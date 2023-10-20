@@ -80,3 +80,33 @@ button:hover{
   .category-button:hover {
     background-color: #e0e0e0;
   }
+
+  @media (max-width: 968px) {
+    .input-name-edit[type="text"],
+    .input-description-edit,
+    .input-price-edit[type="number"] {
+        width: 100%; /* Ocupar toda a largura disponível */
+        max-width: 400px; /* Limite a largura máxima para telas maiores */
+    }
+
+    .label-create-product {
+        font-weight: bold;
+        color: rgb(15, 15, 15);
+    }
+
+    .create-product-form {
+        margin-top: 22px;
+    }
+
+    .form-group-product {
+        margin-bottom: 10px;
+    }
+
+    .form-actions {
+        margin-top: 15px;
+    }
+
+    .categories-container {
+        max-height: 100px; /* Defina uma altura máxima e habilite a rolagem para uma lista de categorias mais longa */
+    }
+}

@@ -130,3 +130,27 @@
     max-height: 25px;
     vertical-align: middle;
 }
+
+@media screen and (max-width: 986px) {
+    .list-card-me {
+        width: 100%; /* Faça o cartão ocupar a largura total da tela */
+        flex-direction: column; /* Altere a direção para coluna */
+        margin: 5px 0; /* Margem padrão */
+    }
+
+    .list-info-me {
+        margin-left: 0; /* Redefina a margem esquerda */
+    }
+
+    .add-button-me {
+        position: relative; /* Redefina a posição */
+        top: auto;
+        left: auto;
+        transform: none;
+        text-align: center;
+    }
+
+    .add-button-me button {
+        width: 60%; /* Faça o botão ocupar a largura total */
+    }
+}

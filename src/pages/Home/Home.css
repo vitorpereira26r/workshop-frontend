@@ -20,7 +20,7 @@
   }
 
   p {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 150px;
     margin-right: 150px;
     margin-bottom: 5px;
@@ -49,16 +49,5 @@
   /* Add this CSS to your existing CSS file or create a new one */
 .button-link {
   text-decoration: none; /* Remove the default underline for links */
-}
-  
-/* Add responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .page-container {
-    margin-top: 20px; /* Adjust the top margin for smaller screens */
-  }
-
-  .page-content {
-    padding: 0 20px; /* Add horizontal padding for smaller screens */
-  }
 }
   

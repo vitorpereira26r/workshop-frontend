@@ -40,3 +40,36 @@
 button:hover{
     background-color: #0056b3;
 }
+
+
+@media (max-width: 968px) {
+    .input-create-user[type="text"],
+    .input-create-user[type="password"] {
+        width: 100%; /* Ocupar toda a largura disponível */
+        max-width: 600px; /* Limite a largura máxima para telas maiores */
+    }
+
+    .label-create-user {
+        font-weight: bold;
+        color: rgb(15, 15, 15);
+    }
+
+    .create-user-form {
+        margin-top: 22px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .form-actions {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .form-actions button{
+        width: 80%;
+    }
+}
