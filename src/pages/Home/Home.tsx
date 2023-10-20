@@ -4,7 +4,6 @@ import UMLDiagram from '../../assets/images/workshop-diagram.drawio.png'
 import './Home.css'
 import '../../global.css'
 import { apiUrl } from '../../services/Api';
-import { Footer } from '../../components/Footer/Footer';
 
 const HomePage: React.FC = () => {
 
