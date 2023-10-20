@@ -123,6 +123,7 @@ export const AddItemModal:React.FC<Props> = ({
             ))}
         </ul>
         </div>
+        <p>{"Refresh the page to see the products added to the order. (still trying to solve that!)"}</p>
         <div className='submit-itens-to-order-container-me'>
             <button className='submit-itens-to-order-me' onClick={handleSubmit}>Submit Itens</button>
         </div>
