@@ -29,40 +29,40 @@ O frontend usou o site netlify para fazer o deploy do sistema.
 ## Site sendo executado:
 
 ### Home page
-![Home page]()
+![Home page](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/homepage.png)
 
 ### Users Page
-![Users page]()
+![Users page](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/userspage.png)
 
 ### Create User Modal
-![create user modal]()
+![create user modal](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/creatinguser.png)
 
 ### Orders Page
-![Orders page]()
+![Orders page](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/orderspage.png)
 
 ### Delete Order (Todas as deleções são assim)
-![Delete]()
+![Delete](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/delete.png)
 
 ### Create Order
-![Create Order]()
+![Create Order](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/createorder.png)
 
 ### Changing Order Status
-![Change order status]()
+![Change order status](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/changeorderstatus.png)
 
 ### Order Adding Item
-![Add item to order]()
+![Add item to order](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/orderadditem.png)
 
 ### Order State Before Payment
-![Order before payment]()
+![Order before payment](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/orderbeforepay.png)
 
 ### Order State After Payment
-![Order After payment]()
+![Order After payment](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/orderafterpay.png)
 
 ### Products Page
-![Products page]()
+![Products page](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/productspage.png)
 
 ### Create Product
-![Create Product]()
+![Create Product](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/createproduct.png)
 
 ### Categories Page
-![Categories Page]()
+![Categories Page](https://github.com/vitorpereira26r/workshop-frontend/blob/main/src/assets/inExe/categoriespage.png)
