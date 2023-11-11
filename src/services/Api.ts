@@ -7,7 +7,7 @@ import { Category } from "../entities/Category";
 //export const apiUrl = "https://workshop-springboot3-app-befefc2b19cc.herokuapp.com"; // heroku server
 //export const apiUrl = "http://localhost:8080"; // localhost
 
-export const apiUrl = "https://workshop-springboot3-jpa-postgresql.onrender.com/users";
+export const apiUrl = "https://workshop-springboot3-jpa-postgresql.onrender.com";
 
 export const fetchUsers = async (): Promise<User[]> => {
     try{
